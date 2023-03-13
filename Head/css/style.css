@@ -1,0 +1,16 @@
+button {
+    height: 30px;
+    width: 50px;
+    background: darkgreen;
+}
+
+.user {
+    height: 150px;
+    width: 150px;
+    background: white;
+    border: 1px black solid;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
