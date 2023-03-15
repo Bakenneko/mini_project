@@ -1,7 +1,37 @@
-.button {
+body {
+    background: #fafafd;
+    margin: 10px;
+    font-size: 13px;
+    font-family: Bahnschrift, sans-serif;
+}
 
+.user {
+    width: 100%;
+    height: 400px;
+    background: greenyellow;
+    flex-wrap: wrap;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+a{
+    text-decoration:none;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    border: 2px solid #F0D900;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background: #F5F240;
+    border: 2px solid #F0D900;
+    border-radius: 10px 150px 30px 150px;
+}
+
+.button {
+    display: flex;
     border-radius: 5px;
     padding: 6px 10px;
     vertical-align: revert;
@@ -10,11 +40,5 @@
 }
 
 
-.user {
-    width: 15em;
-    border: 1px solid #333;
-    box-shadow: 8px 8px 5px #444;
-    padding: 8px 12px;
-    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
-}
+
 
