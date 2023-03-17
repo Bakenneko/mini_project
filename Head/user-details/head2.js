@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<script>
+const userInfo = document.getElementsByClassName('usersInfo')[0];
 
-let url = new URL(location.href)
-let id = url.searchParams.get('id');
+let data = 'data';
 
-fetch (`https://jsonplaceholder.typicode.com/users/${id}`)
-    .then(resp => resp.json())
-    .then(value => {
+const user = JSON.parse(localStorage.getItem(data));
 
-        document.createElement('div');
+function newUser(user) {
+    for (const userChapter in user) {
+        if(typeof user[userChapter] !== 'object'){
+            const div = document.createElement('div');
+            div.innerText = `${userChapter} ${user[userChapter]}`;
+            div.classList.add('userChapter');
+            userInfo.appendChild(div);
+        }else {
+            newUser(user[userChapter]);
+        }
+    }
+}
 
-    });
+newUser(user);
+
+
 
 
 
@@ -27,6 +30,4 @@ fetch (`https://jsonplaceholder.typicode.com/users/${id}`)
 // 6 Кожному посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
 // котра має детальну інфу про поточний пост.
 
-</script>
-</body>
-</html>
+
