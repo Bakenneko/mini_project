@@ -1,5 +1,5 @@
-const user = document.getElementsByClassName('usersBox')[0];
-const user2 = document.getElementsByClassName('row-cols-2')[0];
+const user = document.getElementsByClassName("text-body-secondary")[0];
+const user2 = document.getElementsByClassName("row")[0];
 
 let data = 'data';
 
@@ -8,16 +8,16 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
     .then(values => {
 
         for (const value of values) {
-            let div = document.createElement('div');
-            div.innerText = `${value.id}. ${value.name}`;
-            div.classList.add('box');
+            let div1 = document.createElement('div');
+            div1.innerText = `${value.id}. ${value.name}`;
+            div1.classList.add("row-cols-1");
             user.appendChild(user2);
-            user2.appendChild(div);
+            user2.appendChild(div1);
 
             const uButton = document.createElement('button');
             uButton.innerText = 'info';
             uButton.classList.add('uButton');
-            div.appendChild(uButton);
+            div1.appendChild(uButton);
 
             uButton.onclick = (e) => {
                 e.preventDefault();
@@ -27,12 +27,10 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
         }
     });
 
-
 // 1. В index.html Отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
 // 2. Вивести id,name всіх user в index.html. Окремий блок для кожного user.
 // 3. Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html,
 // котра має детальну інфорацію про об'єкт на який клікнули
-
 
 // Стилизація проєкта -
 // index.html - всі блоки з user - по 2 в рядок. кнопки/посилвння розташувати під інформацією про user.
@@ -40,4 +38,3 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
 // блоки з короткою інфою про post - в ряд по 5 .
 // post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.
 // Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)
-// button.onclick = () => {location.href = `user-details.html?id=${user.id}`;
