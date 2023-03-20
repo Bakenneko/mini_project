@@ -1,4 +1,4 @@
-const userInfo = document.getElementsByClassName('col-10')[0];
+const userInfo = document.getElementsByClassName('container2')[0];
 let data = 'data';
 const user = JSON.parse(localStorage.getItem(data));
 
@@ -7,7 +7,7 @@ function newUser(user) {
         if (typeof user[userChapter] !== 'object') {
             const div = document.createElement('div');
             div.innerText = `${userChapter}: ${user[userChapter]}`;
-            div.classList.add('box');
+            div.classList.add('box2');
             userInfo.appendChild(div);
         } else {
             newUser(user[userChapter]);
@@ -35,24 +35,17 @@ butPost.onclick = (e) => {
                 for (const jsonElement of json) {
                     const divPost = document.createElement('div');
                     divPost.innerText = `${jsonElement.id}: ${jsonElement.title}`;
-                    divPost.classList.add('box');
+                    divPost.classList.add('box1');
                     div1.appendChild(divPost);
 
-                    const posBut = document.createElement("button");
-                    posBut.innerText = "details";
-                    divPost.appendChild(posBut);
-
+                    const route = document.createElement('a');
+                    route.innerText = 'title';
+                    route.href = `../post-details/post-details.html?value=${JSON.stringify(jsonElement)}`;
+                    divPost.appendChild(route);
                 }
         });
 }
 
-
-// for (const post in posts1) {
-//     const divPost = document.createElement('div');
-//     divPost.innerText = ` ${posts1.id}: ${posts1.title}`;
-//     divPost.classList.add('box');
-//     div1.appendChild(divPost);
-// }
 
 
 // На сторінці user-details.html:

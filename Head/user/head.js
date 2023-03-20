@@ -1,5 +1,5 @@
-const user = document.getElementsByClassName("text-body-secondary")[0];
-const user2 = document.getElementsByClassName("row")[0];
+const user = document.getElementsByClassName("container1")[0];
+const user2 = document.getElementsByClassName("box1")[0];
 
 let data = 'data';
 
@@ -10,7 +10,7 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
         for (const value of values) {
             let div1 = document.createElement('div');
             div1.innerText = `${value.id}. ${value.name}`;
-            div1.classList.add("row-cols-1");
+            div1.classList.add("box2");
             user.appendChild(user2);
             user2.appendChild(div1);
 
